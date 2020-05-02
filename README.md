@@ -54,38 +54,3 @@ In order to test, there is some options:
 
 1. Use tx project in simulation environment and set a source block in the end of the system. This way you can see how data is processed.
 2. Use rx project with RTL SDR and wait real airplanes send ADS-B packets.
-
-
-## ADS-B GHOST
-This project consists in the implementation of a ghost aircraft, simulating a real one. This aircraft use an ADS-B (Automatic dependent surveillance-broadcast).
-
-### ADS-B encoder features
-1. The ADS-B encoder is a WIP (work in progress) package to encode ADS-B frames.
-2. This package encode aircraft ID messages and WIP aircraft position.
-
-### ADS-B decoder features
-1. The features of this package can be seen at https://github.com/junzis/pyModeS
-
-### ADS-B ghost features
-1.  
-2.
-
-### CRC calculator features
-1. CRC (Cyclic redundancy check) file is used to calculate CRC to frames.
-
-### Ghost aircraft features
-1.
-2. 
-
-###Util package features
-1. This package implements some common functions like hex2bin, bin2int, hex2int, crc, gray2int.
-
-## Notes
-
-### General
-1.
-2.
-
-### ADS-B encoder
-1.
-2.
