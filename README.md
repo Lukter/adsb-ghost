@@ -19,6 +19,19 @@ This repository has:
 * *Ghost aircraft*
 * *Util package with common functions*
 
+## ADS-B TX (FLYDUTCH)
+
+* This subsystem starts with the “ADS-B encoder” block that
+is of the source type, therefore, it has no inputs, but outputs a continuous flow of
+1 byte (8 bits). ADS-B data is transmitted, created in this block and transmitted
+in 8-bit pieces. The “Repack bits” and “PPM mapper” blocks, together, take
+each bit received and modulated in PPM. After this process, the modulated data is
+sent to the “Stream Mux” block. This block is responsible for creating the framework
+ADS-B, joining the preamble, the modulated bits and a period of silence. Them, this packet is
+sended to “Interpolation FIR Filter” block that performs an oversampling, formatting the entry
+with rectangular pulse. After that, the data is prepared to be sent to HackRF,
+and then transmitted: initially data are transformed into complex values, then the signal is 
+sent to HackRF from the “osmocom Sink” block.
 
 ## Requirements
 
