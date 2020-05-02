@@ -8,6 +8,30 @@ This repository has:
 * *Ghost aircraft*
 * *Util package with common functions*
 
+
+## Requirements
+
+1. python >= 2.7
+2. GNU Radio
+
+## Running project
+
+In order to test, there is some options:
+
+### Tx and Rx together
+1. To test the entire system in simulation environment, you can set tx grc and rx grc in the same project and connect the blocks.
+2. It's possible to use a HackRF + TX to run transmissor in a host and RTLSDR dongle + RX in another hostname. This well you can see real data with noise.
+
+### Tx
+1. Use tx project in simulation environment and set a sink block in the end of the system. This way you can see transmited data
+2. Use tx project with HackRF to send real data and in another host, use RTL SDR dongle and run dump1090.
+
+### RX
+
+1. Use tx project in simulation environment and set a source block in the end of the system. This way you can see how data is processed.
+2. Use rx project with RTL SDR and wait real airplanes send ADS-B packets.
+
+
 ## ADS-B GHOST
 This project consists in the implementation of a ghost aircraft, simulating a real one. This aircraft use an ADS-B (Automatic dependent surveillance-broadcast).
 
